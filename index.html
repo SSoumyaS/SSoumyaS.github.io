@@ -3,139 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My Portfolio</title>
+    <title>Climate Science Researcher Portfolio</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            background: #f4f4f4;
-            color: #222;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
         }
         header {
-            background: #2c3e50;
+            background: #35A79C;
             color: white;
-            padding: 15px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: sticky;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid;
         }
-        .nav-links {
-            display: flex;
-            gap: 15px;
-        }
-        .nav-links div {
-            cursor: pointer;
-            font-size: 18px;
-            padding: 8px 15px;
-            background: white;
-            color: #2c3e50;
-            border-radius: 5px;
-            transition: background 0.3s, transform 0.2s;
-        }
-        .nav-links div:hover {
-            background: #2980b9;
-            color: white;
-            transform: translateY(-2px);
-        }
-        .hero {
+        header h1 {
             text-align: center;
-            padding: 50px;
-            background: #3498db;
-            color: white;
         }
-        .hero img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-        }
-        .social-links {
-            margin-top: 20px;
-        }
-        .social-links a {
-            margin: 0 10px;
-            display: inline-block;
-        }
-        .social-links img {
-            width: 40px;
-            height: 40px;
-            transition: transform 0.3s;
-        }
-        .social-links img:hover {
-            transform: scale(1.2);
-        }
-        .tab-content {
-            display: none;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        .profile-img {
+            display: block;
             margin: 20px auto;
-            max-width: 900px;
-            text-align: left;
+            width: 200px;
+            border-radius: 50%;
         }
-        .footer {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 20px;
+        .section {
+            background: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 5px;
         }
     </style>
-    <script>
-        function toggleTabContent(tabId) {
-            var content = document.getElementById(tabId);
-            content.style.display = (content.style.display === "block") ? "none" : "block";
-        }
-    </script>
 </head>
 <body>
     <header>
-        <h1>Welcome to My Portfolio</h1>
-        <div class="nav-links">
-            <div onclick="toggleTabContent('publications')">Publications</div>
-            <div onclick="toggleTabContent('media')">Media Highlights</div>
-            <div onclick="toggleTabContent('achievements')">Achievements</div>
+        <div class="container">
+            <h1>Your Name</h1>
+            <h2>Climate Science Researcher</h2>
         </div>
     </header>
-    <div class="hero">
-        <img src="ProfilePicturePhoto.jpg" alt="Your Photo">
-        <h2>Hi, I'm Soumya, a Climate Science Researcher with a focus on Urban Climate</h2>
-        <div class="social-links">
-            <a href="https://scholar.google.com/citations?user=O2CKIUsAAAAJ&hl=en" target="_blank">
-                <img src="google-scholar-logo.png" alt="Google Scholar">
-            </a>
-            <a href="#" target="_blank">
-                <img src="linkedin-logo.png" alt="LinkedIn">
-            </a>
-            <a href="#" target="_blank">
-                <img src="researchgate-logo.png" alt="ResearchGate">
-            </a>
-            <a href="#" target="_blank">
-                <img src="orcid-logo.png" alt="ORCID">
-            </a>
+
+    <div class="container">
+        <img src="ProfilePicturePhoto.jpg" alt="Your Name" class="profile-img">
+        
+        <div class="section">
+            <h2>About Me</h2>
+            <p>Brief introduction about yourself and your research focus in climate science.</p>
         </div>
-    </div>
-    <div id="publications" class="tab-content">
-        <h2>Publications</h2>
-        <p>List of research papers and articles published in peer-reviewed journals.</p>
-    </div>
-    <div id="media" class="tab-content">
-        <h2>Media Highlights</h2>
-        <p>Press releases, interviews, and articles featuring my research.</p>
-    </div>
-    <div id="achievements" class="tab-content">
-        <h2>Achievements</h2>
-        <p>Awards, recognitions, and major milestones in my research career.</p>
-    </div>
-    <div class="footer">
-        Contact: [Your Email] | LinkedIn: [Your Profile] | GitHub: [Your GitHub]
+
+        <div class="section">
+            <h2>Research Projects</h2>
+            <ul>
+                <li>Project 1: Brief description</li>
+                <li>Project 2: Brief description</li>
+                <li>Project 3: Brief description</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Publications</h2>
+            <ul>
+                <li>Publication 1</li>
+                <li>Publication 2</li>
+                <li>Publication 3</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Contact</h2>
+            <p>Email: your.email@example.com</p>
+            <p>LinkedIn: linkedin.com/in/yourprofile</p>
+            <p>Twitter: @yourhandle</p>
+        </div>
     </div>
 </body>
 </html>
