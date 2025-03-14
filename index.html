@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Soumya Satyakanta Sethi - Climate Science Researcher</title>
+    <title>Dr. [Your Name] - Climate Science Researcher</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,6 +18,35 @@
             padding: 20px;
             font-size: 24px;
         }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            background: #00796b;
+            padding: 10px;
+        }
+        .tab-button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .tab-button:hover, .tab-button.active {
+            background: #004d40;
+            border-radius: 5px;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            text-align: left;
+            background: white;
+        }
+        .active-tab {
+            display: block;
+        }
         .hero {
             padding: 50px;
             background: #f4f4f4;
@@ -29,30 +58,16 @@
             object-fit: cover;
             margin-bottom: 20px;
         }
-        .hero h1 {
-            font-size: 36px;
-            color: #004d40;
-        }
-        .hero p {
-            font-size: 18px;
-            color: #555;
-            max-width: 600px;
-            margin: auto;
-        }
-        .content {
-            padding: 20px;
-            max-width: 800px;
-            margin: auto;
-            text-align: left;
-        }
         .social-links {
             margin-top: 20px;
         }
         .social-links a {
             margin: 0 10px;
             text-decoration: none;
-            color: #004d40;
-            font-size: 18px;
+        }
+        .social-links img {
+            width: 40px;
+            height: 40px;
         }
         .footer {
             background: #004d40;
@@ -63,29 +78,66 @@
             width: 100%;
         }
     </style>
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tabbuttons;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tabbuttons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabbuttons.length; i++) {
+                tabbuttons[i].classList.remove("active");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
 </head>
-<body>
-    <header>Dr. Soumya Satyakanta Sethi - Climate Science Researcher</header>
+<body onload="document.getElementById('defaultOpen').click();">
+    <header>Dr. [Your Name] - Climate Science Researcher</header>
     <div class="hero">
-        <img src="ProfilePicturePhoto.jpg" alt="Your Photo">
+        <img src="your-photo.jpg" alt="Your Photo">
         <h1>Welcome to My Research Portfolio</h1>
         <p>I am a researcher in climate science with a PhD, focusing on urban climate and its impacts.</p>
+        <h2>About Me</h2>
+        <p>I am a climate scientist dedicated to understanding urban climate dynamics, including urban heat islands and pollution islands.</p>
+        <h2>My Research</h2>
+        <p>My research focuses on analyzing urbanization's impacts on local climate patterns using statistical methods, remote sensing, and GIS techniques.</p>
         <div class="social-links">
-            <a href="https://scholar.google.com/citations?user=O2CKIUsAAAAJ&hl=en" target="_blank">Google Scholar</a>
-            <a href="https://www.linkedin.com/in/soumya-ss/" target="_blank">LinkedIn</a>
-            <a href="https://www.researchgate.net/profile/Soumya-Sethi-2?ev=hdr_xprf" target="_blank">ResearchGate</a>
-            <a href="https://orcid.org/0000-0002-0391-6925" target="_blank">ORCID</a>
+            <a href="https://scholar.google.com/citations?user=O2CKIUsAAAAJ&hl=en" target="_blank">
+                <img src="google-scholar-logo.png" alt="Google Scholar">
+            </a>
+            <a href="[Your LinkedIn]" target="_blank">
+                <img src="linkedin-logo.png" alt="LinkedIn">
+            </a>
+            <a href="[Your ResearchGate]" target="_blank">
+                <img src="researchgate-logo.png" alt="ResearchGate">
+            </a>
+            <a href="[Your ORCID]" target="_blank">
+                <img src="orcid-logo.png" alt="ORCID">
+            </a>
         </div>
     </div>
-    <div class="content">
-        <h2 id="publications">Publications</h2>
+    <div class="tabs">
+        <button class="tab-button" id="defaultOpen" onclick="openTab(event, 'publications')">Publications</button>
+        <button class="tab-button" onclick="openTab(event, 'media')">Media Highlights</button>
+        <button class="tab-button" onclick="openTab(event, 'achievements')">Achievements</button>
+    </div>
+    <div class="tab-content" id="publications">
+        <h2>Publications</h2>
         <p>List of research papers and articles published in peer-reviewed journals.</p>
-        
-        <h2 id="media">Media Highlights</h2>
+    </div>
+    <div class="tab-content" id="media">
+        <h2>Media Highlights</h2>
         <p>Press releases, interviews, and articles featuring my research.</p>
-        
-        <h2 id="achievements">Achievements</h2>
+    </div>
+    <div class="tab-content" id="achievements">
+        <h2>Achievements</h2>
         <p>Awards, recognitions, and major milestones in my research career.</p>
+    </div>
+    <div class="footer">
+        Contact: [Your Email] | LinkedIn: [Your Profile] | GitHub: [Your GitHub]
     </div>
 </body>
 </html>
