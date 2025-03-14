@@ -17,35 +17,10 @@
             color: white;
             padding: 20px;
             font-size: 24px;
-        }
-        .tabs {
-            display: flex;
-            justify-content: center;
-            background: #00796b;
-            padding: 10px;
-        }
-        .tab-button {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 18px;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-        .tab-button:hover, .tab-button.active {
-            background: #004d40;
-            border-radius: 5px;
-        }
-        .tab-content {
-            display: none;
-            padding: 20px;
-            max-width: 800px;
-            margin: auto;
-            text-align: left;
-            background: white;
-        }
-        .active-tab {
-            display: block;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
         }
         .hero {
             padding: 50px;
@@ -69,33 +44,44 @@
             width: 40px;
             height: 40px;
         }
-        .footer {
-            background: #004d40;
-            color: white;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+        .tab-container {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .tab-box {
+            background: white;
+            padding: 20px;
+            margin: 10px 0;
+            cursor: pointer;
+            border: 2px solid #00796b;
+            border-radius: 5px;
+            text-align: left;
+        }
+        .tab-box:hover {
+            background: #b2dfdb;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background: white;
+            border: 1px solid #00796b;
+            margin-top: 10px;
+            border-radius: 5px;
         }
     </style>
     <script>
-        function openTab(evt, tabName) {
-            var i, tabcontent, tabbuttons;
-            tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
+        function toggleTabContent(tabId) {
+            var content = document.getElementById(tabId);
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
             }
-            tabbuttons = document.getElementsByClassName("tab-button");
-            for (i = 0; i < tabbuttons.length; i++) {
-                tabbuttons[i].classList.remove("active");
-            }
-            document.getElementById(tabName).style.display = "block";
-            evt.currentTarget.classList.add("active");
         }
     </script>
 </head>
-<body onload="document.getElementById('defaultOpen').click();">
-    <header>Soumya Satyakanta Sethi - Climate Science Researcher</header>
+<body>
+    <header>Dr. Soumya Satyakanta Sethi - Climate Science Researcher</header>
     <div class="hero">
         <img src="ProfilePicturePhoto.jpg" alt="Your Photo">
         <h1>Welcome to My Research Portfolio</h1>
@@ -119,22 +105,22 @@
             </a>
         </div>
     </div>
-    <div class="tabs">
-        <button class="tab-button" id="defaultOpen" onclick="openTab(event, 'publications')">Publications</button>
-        <button class="tab-button" onclick="openTab(event, 'media')">Media Highlights</button>
-        <button class="tab-button" onclick="openTab(event, 'achievements')">Achievements</button>
-    </div>
-    <div class="tab-content" id="publications">
-        <h2>Publications</h2>
-        <p>List of research papers and articles published in peer-reviewed journals.</p>
-    </div>
-    <div class="tab-content" id="media">
-        <h2>Media Highlights</h2>
-        <p>Press releases, interviews, and articles featuring my research.</p>
-    </div>
-    <div class="tab-content" id="achievements">
-        <h2>Achievements</h2>
-        <p>Awards, recognitions, and major milestones in my research career.</p>
+    <div class="tab-container">
+        <div class="tab-box" onclick="toggleTabContent('publications')">Publications</div>
+        <div id="publications" class="tab-content">
+            <h2>Publications</h2>
+            <p>List of research papers and articles published in peer-reviewed journals.</p>
+        </div>
+        <div class="tab-box" onclick="toggleTabContent('media')">Media Highlights</div>
+        <div id="media" class="tab-content">
+            <h2>Media Highlights</h2>
+            <p>Press releases, interviews, and articles featuring my research.</p>
+        </div>
+        <div class="tab-box" onclick="toggleTabContent('achievements')">Achievements</div>
+        <div id="achievements" class="tab-content">
+            <h2>Achievements</h2>
+            <p>Awards, recognitions, and major milestones in my research career.</p>
+        </div>
     </div>
     <div class="footer">
         Contact: [Your Email] | LinkedIn: [Your Profile] | GitHub: [Your GitHub]
