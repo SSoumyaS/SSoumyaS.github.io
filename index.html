@@ -3,73 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Climate Science Researcher Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Welcome to My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #ffffff;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(135deg, #444, #222);
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        header h1 {
+            font-size: 24px;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+        .nav-links div {
+            cursor: pointer;
+            font-size: 18px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 25px;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .nav-links div:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+        .hero {
+            text-align: center;
+            padding: 60px;
+            background: #f9f9f9;
+            color: #333;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+        }
+        .hero img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 5px solid #ddd;
+        }
+        .social-links {
+            margin-top: 20px;
+        }
+        .social-links a {
+            margin: 0 10px;
+            display: inline-block;
+        }
+        .social-links img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s;
+        }
+        .social-links img:hover {
+            transform: scale(1.2);
+        }
+        .tab-content {
+            display: none;
+            padding: 25px;
+            background: #fafafa;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 30px auto;
+            max-width: 900px;
+            text-align: left;
+        }
+        .footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            font-weight: 300;
+        }
+    </style>
+    <script>
+        function toggleTabContent(tabId) {
+            var content = document.getElementById(tabId);
+            content.style.display = (content.style.display === "block") ? "none" : "block";
+        }
+    </script>
 </head>
 <body>
-    <!-- Header Section -->
-    <header class="hero">
-        <div class="overlay">
-            <div class="container">
-                <h1>Your Name</h1>
-                <p>Climate Science Researcher | Advocate for Sustainability</p>
-                <a href="#about" class="btn">Learn More</a>
-            </div>
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <div class="nav-links">
+            <div onclick="toggleTabContent('publications')">Publications</div>
+            <div onclick="toggleTabContent('media')">Media Highlights</div>
+            <div onclick="toggleTabContent('achievements')">Achievements</div>
         </div>
     </header>
-
-    <!-- Main Content -->
-    <main class="container">
-        <!-- About Section -->
-        <section id="about" class="section">
-            <h2>About Me</h2>
-            <p>I am a dedicated climate science researcher focused on understanding the impacts of climate change and promoting sustainable solutions. My work combines data analysis, field studies, and collaboration with global experts to address environmental challenges.</p>
-        </section>
-
-        <!-- Research Projects Section -->
-        <section id="projects" class="section">
-            <h2>Research Projects</h2>
-            <ul>
-                <li><strong>Project 1:</strong> Climate Change Impact on Arctic Ecosystems</li>
-                <li><strong>Project 2:</strong> Renewable Energy Solutions for Carbon Neutrality</li>
-                <li><strong>Project 3:</strong> Urban Heat Island Effect Analysis in Major Cities</li>
-            </ul>
-        </section>
-
-        <!-- Publications Section -->
-        <section id="publications" class="section">
-            <h2>Publications</h2>
-            <ul>
-                <li><a href="#">Publication Title - Journal Name (Year)</a></li>
-                <li><a href="#">Publication Title - Journal Name (Year)</a></li>
-                <li><a href="#">Publication Title - Journal Name (Year)</a></li>
-            </ul>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <h2>Contact</h2>
-            <p>Email: your.email@example.com</p>
-            <p>LinkedIn: <a href="#">linkedin.com/in/yourprofile</a></p>
-            <p>Twitter: @yourhandle</p>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2025 Your Name. All Rights Reserved.</p>
-    </footer>
-
-    <!-- JavaScript for Smooth Scrolling -->
-    <script>
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-          anchor.addEventListener('click', function(e) {
-              e.preventDefault();
-              document.querySelector(this.getAttribute('href')).scrollIntoView({
-                  behavior: 'smooth'
-              });
-          });
-      });
-    </script>
+    <div class="hero">
+        <img src="ProfilePicturePhoto.jpg" alt="Your Photo">
+        <h2>Hi, I'm Soumya, a Climate Science Researcher focusing on Urban Climate</h2>
+        <div class="social-links">
+            <a href="https://scholar.google.com/citations?user=O2CKIUsAAAAJ&hl=en" target="_blank">
+                <img src="google-scholar-logo.png" alt="Google Scholar">
+            </a>
+            <a href="#" target="_blank">
+                <img src="linkedin-logo.png" alt="LinkedIn">
+            </a>
+            <a href="#" target="_blank">
+                <img src="researchgate-logo.png" alt="ResearchGate">
+            </a>
+            <a href="#" target="_blank">
+                <img src="orcid-logo.png" alt="ORCID">
+            </a>
+        </div>
+    </div>
+    <div id="publications" class="tab-content">
+        <h2>Publications</h2>
+        <p>List of research papers and articles published in peer-reviewed journals.</p>
+    </div>
+    <div id="media" class="tab-content">
+        <h2>Media Highlights</h2>
+        <p>Press releases, interviews, and articles featuring my research.</p>
+    </div>
+    <div id="achievements" class="tab-content">
+        <h2>Achievements</h2>
+        <p>Awards, recognitions, and major milestones in my research career.</p>
+    </div>
+    <div class="footer">
+        Contact: [Your Email] | LinkedIn: [Your Profile] | GitHub: [Your GitHub]
+    </div>
 </body>
 </html>
